@@ -4,7 +4,7 @@ pipeline {
     stages{
          stage('Download Dependencies'){
              steps {
-                    //sh 'npm install'
+                    sh 'npm install'
                     echo 'CI'
                     }
                 }
@@ -23,7 +23,6 @@ pipeline {
          stage('release'){
             steps {
                     // ideally in enterprise we have test case
-                    // sh 'npm test'
                     echo 'CI'
                     }
                 }
