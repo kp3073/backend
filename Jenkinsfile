@@ -20,7 +20,7 @@ pipeline {
             echo 'CI'
             }
             }
-        stage('test cases'){
+        stage('release'){
                     steps {
                     // ideally in enterprise we have test case
                     // sh 'npm test'
