@@ -4,7 +4,7 @@ pipeline {
     stages{
          stage('Download Dependencies'){
                     steps {
-                    sh 'npm install'
+                    //sh 'npm install'
                     }
                 }
            stage('Code Quality'){
