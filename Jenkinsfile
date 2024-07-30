@@ -37,11 +37,14 @@ pipeline {
       }
     }
 
-    stage('Release'){
-      when {
-        expression { env.TAG_NAME ==~ ".*" }
-      }
-//      steps {
-//        sh 'zip -r backend-${TAG_NAME}.zip node_modules schema DbConfig.js index.js package.json TransactionService.js'
-//        sh 'curl -sSf -u "admin:Admin123" -X PUT -T backend-${TAG_NAME}.zip "http://artifactory.rdevopsb73.online:8081/artifactory/backend/backend-${TAG_NAME}.zip"'
+       stage('Release'){
+         when {
+           expression { env.TAG_NAME ==~ ".*" }
+         }
+   //      steps {
+   //        sh 'zip -r backend-${TAG_NAME}.zip node_modules schema DbConfig.js index.js package.json TransactionService.js'
+   //        sh 'curl -sSf -u "admin:Admin123" -X PUT -T backend-${TAG_NAME}.zip "http://artifactory.rdevopsb73.online:8081/artifactory/backend/backend-${TAG_NAME}.zip"'
+   //      }
+       }
      }
+   }
