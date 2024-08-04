@@ -18,7 +18,7 @@ pipeline {
         }
       }
       steps {
-        //sh 'sonar-scanner -Dsonar.host.url=http://172.31.81.125:9000 -Dsonar.login=admin -Dsonar.password=Canada1991$ -Dsonar.projectKey=backend'
+        sh 'sonar-scanner -Dsonar.host.url=http://172.31.81.125:9000 -Dsonar.login=admin -Dsonar.password=Canada1991$ -Dsonar.projectKey=backend'
         echo 'OK'
       }
     }
@@ -26,7 +26,6 @@ pipeline {
     stage('Unit Tests'){
       when {
         allOf {
-          expression { env.TAG_NAME != env.GIT_BRANCH }
           branch 'main'
         }
       }
@@ -42,8 +41,6 @@ pipeline {
            expression { env.TAG_NAME ==~ ".*" }
          }
         steps {
-   //        sh 'zip -r backend-${TAG_NAME}.zip node_modules schema DbConfig.js index.js package.json TransactionService.js'
-   //        sh 'curl -sSf -u "admin:Admin123" -X PUT -T backend-${TAG_NAME}.zip "http://artifactory.rdevopsb73.online:8081/artifactory/backend/backend-${TAG_NAME}.zip"'
              echo 'CI'
         }
        }
