@@ -23,7 +23,7 @@ pipeline {
       }
     }
 
-stage('Unit Tests'){ Confirm that npm is installed.
+stage('Unit Tests'){
       when {
         allOf {
           branch 'main'
