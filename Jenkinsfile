@@ -23,7 +23,7 @@ pipeline {
       }
     }
 
-stage('Unit Tests'){
+    stage('Unit Tests'){
       when {
         allOf {
           branch 'main'
