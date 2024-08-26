@@ -42,7 +42,8 @@ pipeline {
            expression { env.TAG_NAME ==~ ".*" }
          }
         steps {
-             echo 'CI'
+             sh 'zip -r backend${TAG_NAME}.zip node_modules dbconfig.js package.json schema index.js TransactionService.js'
+             sh 'curl  sSf -u "admin:Canada1991$" -X PUT -T backend${TAG_NAME}.zip 'http://artifactory.aligntune.online:8081/backend/backend${TAG_NAME}.zip''
         }
        }
      }
