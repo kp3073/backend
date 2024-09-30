@@ -1,4 +1,4 @@
-FROM     nodejs
+FROM     node
 RUN      mkdir /app
 WORKDIR  /app
 ADD      node_modules /app/node_modules/
