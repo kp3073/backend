@@ -1,4 +1,4 @@
-source /parameters/param
+source /config/param
 
 
 node /app/index.js
